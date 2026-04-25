@@ -9,8 +9,7 @@ import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
-
+import jakarta.annotation.PostConstruct;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -25,7 +24,7 @@ public class CovidVirusDataService {
 
 	private List<LocationStatus> allStates = new ArrayList<>();
 
-	@PostConstruct
+    @PostConstruct
 	@Scheduled(cron = "* * 1 * * *")
 	public void getVirusData() throws IOException, InterruptedException {
 
